@@ -1,0 +1,9 @@
+.paragraph {
+  font-size: 1.3rem;
+  margin: 1rem auto;
+  letter-spacing: 0.35rem;
+}
+
+#select-sentences {
+  font-size: 5rem;
+}

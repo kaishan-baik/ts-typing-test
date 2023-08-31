@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700&family=Open+Sans:wght@400;500;600;700;800&display=swap");
+
+.modal-window-blackout {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-window {
+  min-width: 30rem;
+  min-height: 20rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 3rem;
+  border: 1px solid #4f82fa;
+  box-shadow: 0 0 20px #4f82fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 2rem; */
+  font-family: "Open Sans";
+}
+
+.modal-window-text {
+  font-size: 2rem;
+  color: #12327d;
+  margin-bottom: 0.5rem;
+}

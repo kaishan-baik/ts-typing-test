@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700&family=Open+Sans:wght@400;500;600;700;800&display=swap");
+
+.test-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* text-align: justify; */
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-height: 700px) {
+  .test-container {
+    display: block;
+    flex-direction: column;
+  }
+}
+
+.test-text-wrapper {
+  background: #fff;
+  min-width: 30%;
+  max-width: 60%;
+  min-height: 30rem;
+  margin: 1rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0.2rem 0.2rem 0.5rem #153b95;
+}
+
+.error-text {
+  background: #ff0101;
+  color: #fff;
+}
+
+.test-loading-text {
+  background: #f89411;
+  color: #fff;
+  font-size: 3rem;
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+span {
+  font-size: 2rem;
+  letter-spacing: normal;
+  font-family: "Open Sans";
+}
+
+.current-char,
+.wrong-char {
+  color: #153b95;
+}
+
+.current-char {
+  background-color: #153b95;
+  color: #fff;
+}
+
+.wrong-char {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.right-char {
+  color: #168212;
+}

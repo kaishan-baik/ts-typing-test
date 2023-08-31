@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FunctionComponent } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import "./style/typography.css";
+
+import { useAppSelector, useAppDispatch } from "./redux/hooks";
+import { setIsTestStarted, setSentences } from "./redux/store/testSlice";
+
+import Header from "./components/ui/Header";
+import Footer from "./components/ui/Footer";
+import Test from "./components/Test";
+import ModalWindow from "./components/ui/ModalWindow";
+import Button from "./components/ui/Button";
+import Select from "./components/ui/Select";
+
+const App: FunctionComponent = () => {
+  const dispatch = useAppDispatch();
+  const isTestStarted = useAppSelector(
+    (state) => state.testSlice.isTestStarted
   );
-}
+  const sentences = useAppSelector((state) => state.testSlice.sentences);
+  const sentencesOptions = [
+    { value: "1", name: "1" },
+    { value: "2", name: "2" },
+    { value: "3", name: "3" },
+    { value: "4", name: "4" },
+    { value: "5", name: "5" },
+  ];
+  const testStateToggler = () => dispatch(setIsTestStarted(true));
+  const changeSentences = (value: string) => dispatch(setSentences(value));
+  return (
+    <>
+      <Header />
+      <main className="container main">
+        {isTestStarted ? (
+          <Test />
+        ) : (
+          <ModalWindow title="Take a typing test!">
+            <label htmlFor="select-senteces" className="paragraph">
+              Choose your number of sentences
+            </label>
+            <Select
+              id="select-senteces"
+              defaultValue={sentences}
+              options={sentencesOptions}
+              onChange={(event) => changeSentences(event.target.value)}
+            />
+            <Button btnText="start" onClick={testStateToggler} />
+          </ModalWindow>
+        )}
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default App;

@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  background: #153b95;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  font-family: "Open Sans";
+  color: #fbeec2;
+  /* color: #153b95; */
+}
