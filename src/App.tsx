@@ -35,11 +35,11 @@ const App: FunctionComponent = () => {
           <Test />
         ) : (
           <ModalWindow title="Take a typing test!">
-            <label htmlFor="select-senteces" className="paragraph">
+            <label htmlFor="select-sentences" className="paragraph">
               Choose your number of sentences
             </label>
             <Select
-              id="select-senteces"
+              id="select-sentences"
               defaultValue={sentences}
               options={sentencesOptions}
               onChange={(event) => changeSentences(event.target.value)}

@@ -35,26 +35,26 @@ const Text = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, currentCharIndex]);
 
-  useEffect(() => {
-    if (currentCharIndex < text.length) {
-      const keyPressHandler = (event: KeyboardEvent) => {
-        const [newText, newCurrentIndex, newMistakes] = compareChars(
-          text,
-          currentCharIndex,
-          event.key,
-          mistakes
-        );
-        dispatch(setCurrentCharIndex(newCurrentIndex));
-        dispatch(setText(newText));
-        dispatch(setMistakes(newMistakes));
-        dispatch(increasePressingCount());
-      };
-      document.addEventListener("keypress", keyPressHandler);
-      return () => {
-        document.removeEventListener("keypress", keyPressHandler);
-      };
-    }
-  }, [currentCharIndex, mistakes, pressingCount, dispatch, text]);
+  // useEffect(() => {
+  //   if (currentCharIndex < text.length) {
+  //     const keyPressHandler = (event: KeyboardEvent) => {
+  //       const [newText, newCurrentIndex, newMistakes] = compareChars(
+  //         text,
+  //         currentCharIndex,
+  //         event.key,
+  //         mistakes
+  //       );
+  //       dispatch(setCurrentCharIndex(newCurrentIndex));
+  //       dispatch(setText(newText));
+  //       dispatch(setMistakes(newMistakes));
+  //       dispatch(increasePressingCount());
+  //     };
+  //     document.addEventListener("keypress", keyPressHandler);
+  //     return () => {
+  //       document.removeEventListener("keypress", keyPressHandler);
+  //     };
+  //   }
+  // }, [currentCharIndex, mistakes, pressingCount, dispatch, text]);
 
   useEffect(() => {
     if (pressingCount === 0 && text.length > 0) {
